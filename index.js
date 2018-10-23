@@ -12,10 +12,20 @@ $(document).ready(()=> {
     let originalPic = $('img').attr('src')
     let altImg = $(this).attr('alt_img_src');
     
-    $(this).attr({
-      alt_img_src: originalPic,
-      src: altImg 
-    })
+   if ($(this).attr({
+     src: originalPic
+   })){
+     $(this).attr({
+      alt_img_src: originalPic, 
+      src: altImg
+     })
+   } else {
+     $(this).attr({
+       alt_img_src: originalPic,
+       src: altImg
+     })
+   }
+
   })
 
   $('button').click(()=>{
